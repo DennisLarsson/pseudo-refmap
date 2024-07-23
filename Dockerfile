@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     make \
     unzip \
+    perl \
+    libsys-hostname-long-perl \
 && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/broadinstitute/picard/releases/download/3.2.0/picard.jar && \
@@ -28,7 +30,19 @@ RUN wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4
     mv gatk /usr/local/bin/ && \
     gatk --version
 
-#RUN wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.2/bowtie2-2.4.2-sra-linux-x86_64.zip/download && \
-#    unzip download && \
-#    mv bowtie2-2.4.2-sra-linux-x86_64/bowtie2* /usr/local/bin/ && \
-#    rm -r bowtie2-2.4.2-sra-linux-x86_64 download
+RUN wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.2/bowtie2-2.4.2-sra-linux-x86_64.zip/download && \
+    unzip download && \
+    mv bowtie2-2.4.2-sra-linux-x86_64/bowtie2* /usr/local/bin/ && \
+    rm -r bowtie2-2.4.2-sra-linux-x86_64 download && \
+    bowtie2 --version
+
+#RUN wget https://catchenlab.life.illinois.edu/stacks/source/stacks-2.66.tar.gz
+
+#RUN tar xfvz stacks-2.66.tar.gz && \
+#    cd stacks-2.66 && \
+#    ./configure && \
+#    make && \
+#    make install && \
+#    cd .. && rm -rf stacks-2.66 stacks-2.66.tar.gz
+
+#RUN denovo_map.pl -v || exit 0
