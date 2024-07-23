@@ -1,1 +1,2 @@
 # pseudo-refmap
+This repository creates an image with all the necessary tools to use a preprocessed fastq file to create a reference using samtools, then maps the sequence files of all samples against it using bowtie2 and finally calls SNPs using ref_map.pl from stack2.
