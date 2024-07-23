@@ -15,8 +15,7 @@ RUN wget https://github.com/broadinstitute/picard/releases/download/3.2.0/picard
     echo 'java -jar /usr/local/bin/picard.jar "$@"' >> picard && \
     chmod +x picard && \
     mv picard /usr/local/bin/ && \
-    picard -h
-
+    picard SortSam --version
 
 RUN wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4.6.0.0.zip && \
     unzip gatk-4.6.0.0.zip && \
