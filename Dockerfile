@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     g++ \
     zlib1g-dev \
     make \
+    unzip \
 && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/broadinstitute/picard/releases/download/3.2.0/picard.jar && \
