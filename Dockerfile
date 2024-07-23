@@ -24,5 +24,4 @@ RUN wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4
     echo '#!/bin/bash' > gatk && \
     echo 'java -jar /usr/local/bin/gatk-package-4.6.0.0-local.jar "$@"' >> gatk && \
     chmod +x gatk && \
-    mv gatk /usr/local/bin/ && \
-    gatk --version
+    mv gatk /usr/local/bin/
