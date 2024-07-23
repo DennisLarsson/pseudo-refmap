@@ -21,7 +21,7 @@ RUN wget https://github.com/broadinstitute/picard/releases/download/3.2.0/picard
 RUN wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4.6.0.0.zip
 RUN unzip gatk-4.6.0.0.zip
 RUN cd gatk-4.6.0.0
-RUN mv gatk-package-4.6.0.0-local.jar /usr/local/bin/
+RUN mv gatk-package-4.6.0.0-local.jar /usr/local/bin/gatk-package-4.6.0.0-local.jar
 RUN cd ..
 RUN rm -r gatk-*
 RUN echo '#!/bin/bash' > gatk
