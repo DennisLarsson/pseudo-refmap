@@ -1,0 +1,8 @@
+FROM pseudo-refmap AS test
+COPY tests/test_catalog.fa.gz /
+
+COPY tests/run_test.sh /
+
+RUN chmod +x run_test.sh
+
+CMD ["./run_test.sh"]
