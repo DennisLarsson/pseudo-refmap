@@ -1,0 +1,43 @@
+##fileformat=VCFv4.2
+##fileDate=20240725
+##source="Stacks v2.66"
+##contig=<ID=6,length=94>
+##contig=<ID=12,length=100>
+##contig=<ID=15,length=95>
+##contig=<ID=117,length=94>
+##contig=<ID=315,length=94>
+##contig=<ID=321,length=94>
+##contig=<ID=448,length=94>
+##contig=<ID=455,length=94>
+##contig=<ID=793,length=94>
+##contig=<ID=837,length=94>
+##contig=<ID=915,length=94>
+##contig=<ID=1116,length=94>
+##contig=<ID=1266,length=94>
+##contig=<ID=1425,length=94>
+##contig=<ID=1840,length=94>
+##contig=<ID=2294,length=94>
+##contig=<ID=2339,length=94>
+##contig=<ID=2398,length=94>
+##contig=<ID=2405,length=94>
+##contig=<ID=2464,length=94>
+##contig=<ID=2505,length=95>
+##INFO=<ID=AD,Number=R,Type=Integer,Description="Total Depth for Each Allele">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total Depth">
+##INFO=<ID=NS,Number=1,Type=Integer,Description="Number of Samples With Data">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allele Depth">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=HQ,Number=2,Type=Integer,Description="Haplotype Quality">
+##FORMAT=<ID=GL,Number=G,Type=Float,Description="Genotype Likelihood">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=MY,Number=1,Type=String,Description="Methylation Annotation">
+##INFO=<ID=loc_strand,Number=1,Type=Character,Description="Genomic strand the corresponding Stacks locus aligns on">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	PaduD31_3_RAD8	PgalGMS128_1_RAD1	PnigCP531_4_RAD7
+6	67	1:66:+	A	G	.	PASS	NS=3;AF=0.500	GT:DP:AD:GQ:GL	0/0:896:849,46:40:0.00,-119.61,-2614.21	1/1:43:1,42:40:-133.40,-9.76,-0.00	0/1:53:35,18:40:-42.50,0.00,-97.91
+12	47	2:46:+	G	T	.	PASS	NS=3;AF=0.500	GT:DP:AD:GQ:GL	0/0:991:971,18:40:0.00,-239.68,-3050.46	1/1:348:3,345:40:-1094.82,-94.99,0.00	0/1:332:42,290:40:-828.59,0.00,-34.66
+117	14	4:13:+	A	G	.	PASS	NS=3;AF=0.500	GT:DP:AD:GQ:GL	0/1:4:1,3:26:-7.27,-0.00,-2.03	0/1:9:3,6:40:-13.64,-0.00,-5.77	0/1:8:3,5:40:-11.31,-0.00,-6.07
+455	33	8:32:+	C	T	.	PASS	NS=3;AF=0.500	GT:DP:AD:GQ:GL	0/0:3:3,0:13:-0.06,-0.92,-7.12	1/1:4:0,4:16:-9.35,-1.15,-0.03	0/1:4:1,3:17:-5.89,-0.03,-1.25
+793	22	9:21:+	A	G	.	PASS	NS=3;AF=0.500	GT:DP:AD:GQ:GL	0/1:92:24,68:40:-221.69,0.00,-60.60	0/1:108:58,50:40:-151.02,0.00,-180.18	0/1:28:22,6:40:-14.10,-0.00,-72.54
+915	36	11:35:+	A	G	.	PASS	NS=3;AF=0.500	GT:DP:AD:GQ:GL	0/1:9:2,7:29:-14.96,-0.00,-2.26	0/0:3:3,0:14:-0.05,-1.00,-7.59	1/1:5:0,5:21:-12.71,-1.61,-0.01

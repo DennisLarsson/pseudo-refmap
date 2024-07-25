@@ -8,13 +8,7 @@ picard CreateSequenceDictionary \
 
 bowtie2-build reference/catalog.fa.gz reference/catalog.fa.gz
 
-mkdir mapped
-mkdir alignment_metrics
-mkdir sorted
-mkdir mappedSortGroup
-mkdir realigned
-mkdir ref_map
-mkdir populations
+mkdir -p mapped alignment_metrics sorted mappedSortGroup realigned ref_map populations
 
 while IFS= read -r LINE; do
     SAMPLE_NAME=$(echo "$LINE" | cut -f1)
@@ -71,3 +65,13 @@ populations --in-path ref_map/ \
   --vcf \
   --write-random-snp \
   -W whitelist_refmap
+
+# Write diff test cases
+for sample in $(ls realigned/); do
+    echo "Comparing ${sample}"
+    diff --binary realigned/${sample} expected_realigned/${sample}
+done
+
+# Compare normalized VCF files
+echo "Comparing VCF files"
+diff <(grep -v "#" populations/populations.snps.vcf | cut -f 1) <(grep -v "#" expected_populations.snps.vcf | cut -f 1)
