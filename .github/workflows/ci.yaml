@@ -39,6 +39,15 @@ jobs:
         push: false
         load: true
 
+    - name: Save Docker cache
+      if: always()
+      uses: actions/cache@v4.0.2
+      with:
+        path: /tmp/.buildx-test.cache
+        key: ${{ runner.os }}-test-buildx-${{ hashFiles('Dockerfile', 'tests/Dockerfile.extended') }}
+        restore-keys: |
+          ${{ runner.os }}-test-buildx-
+
     - name: Run test Docker container
       run: docker run pseudo-refmap-test
 
