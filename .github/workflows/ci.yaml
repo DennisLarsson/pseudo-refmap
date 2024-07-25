@@ -1,10 +1,8 @@
 name: pseudo-refmap-image
-
 on:
   push:
     branches: [ "*" ]
     tags: [ "*" ]
-
   workflow_dispatch:
 
 jobs:
@@ -23,6 +21,9 @@ jobs:
         key: ${{ runner.os }}-test-buildx-${{ hashFiles('Dockerfile', 'tests/Dockerfile.extended') }}
         restore-keys: |
           ${{ runner.os }}-test-buildx-
+
+    - name: Ensure cache directory exists
+      run: mkdir -p /tmp/.buildx-test.cache
 
     - name: create test Dockerfile
       run: cat Dockerfile tests/Dockerfile.extended > Dockerfile.test
