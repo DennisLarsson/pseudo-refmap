@@ -9,16 +9,24 @@ picard CreateSequenceDictionary \
 
 bowtie2-build reference/catalog.fa.gz reference/catalog.fa.gz
 
-mkdir mapped
-mkdir alignment_metrics
+
 
 while IFS= read -r LINE; do
     SAMPLE_NAME=$(echo "$LINE" | cut -f1)
 
     echo "Mapping $SAMPLE_NAME"
+    mkdir mapped
+    mkdir alignment_metrics
     bowtie2 --omit-sec-seq \
-    --met-file alignment_metrics/${SAMPLE_NAME}.log \
-    -x reference/catalog.fa.gz \
-    -U samples/${SAMPLE_NAME}.fq.gz \
-    -S mapped/${SAMPLE_NAME}.sam
+      --met-file alignment_metrics/${SAMPLE_NAME}.log \
+      -x reference/catalog.fa.gz \
+      -U samples/${SAMPLE_NAME}.fq.gz \
+      -S mapped/${SAMPLE_NAME}.sam
+    
+    echo "sorting $SAMPLE_NAME"
+    mkdir sorted
+    picard SortSam \
+      I=mapped/${SAMPLE_NAME}.sam \
+      O=sorted/${SAMPLE_NAME}.bam \
+      SO=coordinate
 done < popmap
