@@ -1,7 +1,7 @@
 FROM pseudo-refmap AS test
-COPY tests/test_catalog.fa.gz /
-COPY tests/test_samples/ /
-COPY tests/popmap_test /
+COPY tests/test_catalog.fa.gz /catalog.fa.gz
+COPY tests/test_samples/ /samples
+COPY tests/popmap_test /popmap
 
 COPY tests/run_test.sh /
 
