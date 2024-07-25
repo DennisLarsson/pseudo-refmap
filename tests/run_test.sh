@@ -1,12 +1,13 @@
 #! /bin/bash
 
-samtools faidx catalog.fa.gz
+mkdir reference
+samtools faidx reference/catalog.fa.gz
 
 picard CreateSequenceDictionary \
-    -R catalog.fa.gz \
-    -O catalog.fa.gz.dict
+    -R reference/catalog.fa.gz \
+    -O reference/catalog.fa.gz.dict
 
-bowtie2-build catalog.fa.gz catalog.fa.gz
+bowtie2-build reference/catalog.fa.gz reference/catalog.fa.gz
 
 mkdir mapped
 mkdir alignment_metrics
