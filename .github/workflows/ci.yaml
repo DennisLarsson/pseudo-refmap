@@ -20,7 +20,7 @@ jobs:
       uses: actions/cache@v4.0.2
       with:
         path: /tmp/.buildx-test.cache
-        key: ${{ runner.os }}-test-buildx-${{ github.sha }}
+        key: ${{ runner.os }}-test-buildx-${{ hashFiles('Dockerfile', 'tests/Dockerfile.extended') }}
         restore-keys: |
           ${{ runner.os }}-test-buildx-
 
@@ -54,7 +54,7 @@ jobs:
       uses: actions/cache@v4.0.2
       with:
         path: /tmp/.buildx-cache
-        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        key: ${{ runner.os }}-buildx-${{ hashFiles('Dockerfile') }}
         restore-keys: |
           ${{ runner.os }}-buildx-
 
